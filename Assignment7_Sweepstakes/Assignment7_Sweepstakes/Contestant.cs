@@ -56,7 +56,14 @@ namespace Assignment7_Sweepstakes
 
         public void Update(Contestant winner)
         {
-            throw new NotImplementedException();
+            if(winner == this)
+            {
+                Console.WriteLine("You won!!!");
+            }
+            else
+            {
+                Console.WriteLine("{0} has won. Try again next time!", winner.GetInfo("firstName"));
+            }
         }
     }
 }
