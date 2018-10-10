@@ -16,7 +16,7 @@ namespace Assignment7_Sweepstakes
             // Make a manager here??
         }
 
-        private void GetSweepstakesManager(string type)
+        private void MakeSweepstakesManager(string type)
         {
             manager =  SweepstakesManagerFactory.CreateSweepstakesManager(type);
         }
