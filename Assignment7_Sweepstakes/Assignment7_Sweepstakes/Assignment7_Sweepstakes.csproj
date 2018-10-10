@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contestant.cs" />
+    <Compile Include="EmailMan.cs" />
     <Compile Include="IObserver.cs" />
     <Compile Include="ISubject.cs" />
     <Compile Include="ISweepstakesManager.cs" />

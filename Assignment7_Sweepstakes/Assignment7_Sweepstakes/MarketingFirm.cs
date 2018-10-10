@@ -9,16 +9,32 @@ namespace Assignment7_Sweepstakes
     //  As a developer, I want to create a user interface for any information the application would need to get from the user. One example would be the functionality to assign a Contestant object a first name, last name, email address, and registration number.
     class MarketingFirm
     {
-        private ISweepstakesManager manager;
+        private Dictionary<string, ISweepstakesManager> accounts;
 
         public MarketingFirm()
         {
-            // Make a manager here??
+            accounts = new Dictionary<string, ISweepstakesManager>();
         }
 
-        private void MakeSweepstakesManager(string type)
+        private void MakeSweepstakesManager(string name)
         {
-            manager =  SweepstakesManagerFactory.CreateSweepstakesManager(type);
+            try
+            {
+                string type = InputManagerType();
+                ISweepstakesManager newManager = SweepstakesManagerFactory.CreateSweepstakesManager(type);
+                accounts.Add(name, newManager);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+                MakeSweepstakesManager(name);
+            }
+        }
+
+        private string InputManagerType()
+        {
+            Console.WriteLine();
+            return Console.ReadLine();
         }
     }
 }

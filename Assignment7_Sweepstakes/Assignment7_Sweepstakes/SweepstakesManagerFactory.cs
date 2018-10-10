@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment7_Sweepstakes
 {
-    static class SweepstakesManagerFactory //: ICreateSweepstakesManager
+    static class SweepstakesManagerFactory
     {
         public static ISweepstakesManager CreateSweepstakesManager(string type)
         {
