@@ -64,6 +64,7 @@ namespace Assignment7_Sweepstakes
             {
                 Console.WriteLine("{0} has won. Try again next time!", winner.GetInfo("firstName"));
             }
+            Console.WriteLine();
 
         }
     }

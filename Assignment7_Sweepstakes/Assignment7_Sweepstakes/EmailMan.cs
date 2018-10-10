@@ -18,7 +18,7 @@ namespace Assignment7_Sweepstakes
             MailAddress recipient = new MailAddress(winnersEmail);
             MailMessage message = new MailMessage(sender, recipient);
             message.Subject = "Congration!";
-            message.Body = "Congrats" + firstName + " " + lastName + ", you won the " + sweepstakesName + "sweepstakes!!!";
+            message.Body = "Congrats" + firstName + " " + lastName + ", you won the: " + sweepstakesName + " sweepstakes!!!";
 
             SmtpClient client = new SmtpClient();
             client.Port = 587;
