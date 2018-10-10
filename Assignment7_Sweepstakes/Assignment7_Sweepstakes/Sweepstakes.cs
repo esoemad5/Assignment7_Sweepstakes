@@ -9,6 +9,7 @@ namespace Assignment7_Sweepstakes
     class Sweepstakes : ISubject
     {
         Dictionary<int, Contestant> contestants;
+        List<IObserver> observers;
 
         public Sweepstakes(string name)
         {
@@ -18,6 +19,7 @@ namespace Assignment7_Sweepstakes
         void RegisterContestant(Contestant contestant)
         {
             contestants.Add(contestant.RegistrationNumber, contestant);
+            observers.Add(contestant);
         }
 
         string PickWinner()
@@ -36,17 +38,23 @@ namespace Assignment7_Sweepstakes
 
         public void AddObserver(IObserver observer)
         {
-            throw new NotImplementedException();
+            observers.Add(observer);
         }
 
         public void RemoveObserver(IObserver observer)
         {
-            throw new NotImplementedException();
+            if (!observers.Remove(observer))
+            {
+                throw new Exception("Observer was not found.");
+            }
         }
 
-        public void NotifyObservers()
+        public void NotifyObservers(Contestant winner)
         {
-            throw new NotImplementedException();
+            foreach (IObserver observer in observers)
+            {
+                observer.Update(winner);
+            }
         }
     }
 }
