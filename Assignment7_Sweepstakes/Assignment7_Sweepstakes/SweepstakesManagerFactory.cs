@@ -17,7 +17,7 @@ namespace Assignment7_Sweepstakes
                 case "Stack":
                     return new SweepstakesStackManager();
                 default:
-                    string message = "No SweepstakesManager of type '" + type + "'";
+                    string message = "There are SweepstakesManagers of type '" + type + "'";
                     throw new FormatException(message);
             }
         }

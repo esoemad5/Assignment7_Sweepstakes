@@ -16,9 +16,9 @@ namespace Assignment7_Sweepstakes
         {
             info = new Dictionary<string, string>();
             SetInfo(InputInfo());
-
             registrationNumber = RegistrationNumberFactory.DistributeNumber();
         }
+
         private void SetInfo(Stack<string> info)
         {
             this.info.Add("emailAddress", info.Pop());
@@ -55,14 +55,10 @@ namespace Assignment7_Sweepstakes
 
         public void Update(Contestant winner)
         {
+            Console.WriteLine("{0} {1} ran Update in a Sweepstakes NotifyObservers method! Result:", GetInfo("firstName"), GetInfo("lastName"));
             if(winner == this)
             {
                 Console.WriteLine("You won!!!");
-                if(!info.TryGetValue("emailAdrress", out string email))
-                {
-                    throw new Exception("Winner does not have a registered email address");
-                }
-                EmailMan.SendWinnerMessageTo(email);
             }
             else
             {
