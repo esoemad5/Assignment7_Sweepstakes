@@ -8,24 +8,25 @@ namespace Assignment7_Sweepstakes
 {
     class Contestant // : Interface goes here
     {
-        string firstName;
-        string lastName;
-        string emailAddress;
-        int registrationNumber;
+        private Dictionary<string, string> info;
+        private int registrationNumber;
         
         public Contestant()
         {
-            SetVariables(GetInfo());
+            info = new Dictionary<string, string>();
+            SetInfo(InputInfo());
+
             // How to set registration number? should be unique compared to all contestants (in the sweepstakes? in all the sweepstakes in their manager? in all sweepstakes globally?)
         }
-        private void SetVariables(Stack<string> info)
+        private void SetInfo(Stack<string> info)
         {
-            string emailAddress = info.Pop();
-            string lastName = info.Pop();
-            string firstName = info.Pop();
+            this.info.Add("emailAddress", info.Pop());
+            this.info.Add("lastName", info.Pop());
+            this.info.Add("firstName", info.Pop());
 
         }
-        private Stack<string> GetInfo()
+
+        private Stack<string> InputInfo()
         {
             Stack<string> info = new Stack<string>();
 
@@ -37,6 +38,19 @@ namespace Assignment7_Sweepstakes
             info.Push(Console.ReadLine());
 
             return info;
+        }
+
+        public string GetInfo(string key)
+        {
+            if(info.TryGetValue(key, out string output))
+            {
+                return output;
+            }
+            else
+            {
+                string message = "There is no value associated with: {0}" + key;
+                throw new FormatException(message);
+            }
         }
 
         // Observer methods???
