@@ -8,12 +8,17 @@ namespace Assignment7_Sweepstakes
 {
     class Sweepstakes : ISubject
     {
-        Dictionary<int, Contestant> contestants;
-        List<IObserver> observers;
+        private Dictionary<int, Contestant> contestants;
+        private List<IObserver> observers;
+        private string name;
+        public string Name { get => name; }
+
 
         public Sweepstakes(string name)
         {
+            this.name = name;
             contestants = new Dictionary<int, Contestant>();
+            observers = new List<IObserver>();
         }
 
         public void RegisterContestant(Contestant contestant)
