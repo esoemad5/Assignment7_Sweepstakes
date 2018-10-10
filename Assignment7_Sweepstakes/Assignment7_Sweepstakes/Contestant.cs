@@ -12,5 +12,14 @@ namespace Assignment7_Sweepstakes
         string lastName;
         string emailAddress;
         int registrationNumber;
+        
+        public Contestant()
+        {
+            Stack<string> args = new Stack<string>();
+        }
+        private void SetVariables(Stack<string> args)
+        {
+
+        }
     }
 }
