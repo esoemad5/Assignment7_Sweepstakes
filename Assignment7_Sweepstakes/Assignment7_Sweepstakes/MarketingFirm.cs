@@ -15,6 +15,15 @@ namespace Assignment7_Sweepstakes
             accounts = new Dictionary<string, ISweepstakesManager>();
         }
 
+        public ISweepstakesManager GetAccount(string name)
+        {
+            if(accounts.TryGetValue(name, out ISweepstakesManager manager))
+            {
+                return manager;
+            }
+            throw new Exception("Account not found");
+        } 
+
         public void MakeSweepstakesManager(string name)
         {
             try
