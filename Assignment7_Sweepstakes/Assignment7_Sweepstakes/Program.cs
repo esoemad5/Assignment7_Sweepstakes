@@ -10,7 +10,7 @@ namespace Assignment7_Sweepstakes
     {
         static void Main(string[] args)
         {
-            EmailMan.SendWinnerMessageTo("ab6343416@gmail.com");
+            EmailMan.SendWinnerMessageTo("esoemad5@gmail.com");
             Console.WriteLine("Message Sent!");
             //string test = "asd123";
             //int i;

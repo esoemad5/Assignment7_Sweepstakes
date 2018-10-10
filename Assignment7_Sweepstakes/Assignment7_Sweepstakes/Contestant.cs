@@ -53,21 +53,22 @@ namespace Assignment7_Sweepstakes
             }
         }
 
-        public string Update(Contestant winner)
+        public void Update(Contestant winner)
         {
             if(winner == this)
             {
                 Console.WriteLine("You won!!!");
+                if(!info.TryGetValue("emailAdrress", out string email))
+                {
+                    throw new Exception("Winner does not have a registered email address");
+                }
+                EmailMan.SendWinnerMessageTo(email);
             }
             else
             {
                 Console.WriteLine("{0} has won. Try again next time!", winner.GetInfo("firstName"));
             }
-            if(!info.TryGetValue("emailAddress", out string output))
-            {
-                throw new Exception("Contestant doesn't have an email address.");
-            }
-            return output;
+
         }
     }
 }

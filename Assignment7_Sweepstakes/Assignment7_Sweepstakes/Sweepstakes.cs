@@ -69,11 +69,7 @@ namespace Assignment7_Sweepstakes
         {
             foreach (IObserver observer in observers)
             {
-                string winnersEmail = observer.Update(winner);
-                if(observer == winner && observer is Contestant)
-                {
-                    EmailMan.SendWinnerMessageTo(winnersEmail);
-                }
+                observer.Update(winner);
             }
         }
     }

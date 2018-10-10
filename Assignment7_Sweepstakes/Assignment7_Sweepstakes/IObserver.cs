@@ -2,7 +2,7 @@
 {
     interface IObserver
     {
-        string Update(Contestant winner);
+        void Update(Contestant winner);
 
     }
 }
