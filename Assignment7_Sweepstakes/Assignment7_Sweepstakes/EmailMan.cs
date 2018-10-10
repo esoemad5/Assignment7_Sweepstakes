@@ -29,9 +29,6 @@ namespace Assignment7_Sweepstakes
             client.UseDefaultCredentials = false;
             client.Credentials = new System.Net.NetworkCredential("ab6343416@gmail.com", "HorseBatteryStaple");
             client.Send(message);
-            //SmtpClient smtpClient = new SmtpClient();
-            //smtpClient.Send(message);
-
         }
     }
 }

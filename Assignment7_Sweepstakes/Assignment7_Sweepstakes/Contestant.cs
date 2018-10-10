@@ -17,7 +17,7 @@ namespace Assignment7_Sweepstakes
             info = new Dictionary<string, string>();
             SetInfo(InputInfo());
 
-            // how to deal with registrationNumber? where are contestants created?
+            registrationNumber = RegistrationNumberFactory.DistributeNumber();
         }
         private void SetInfo(Stack<string> info)
         {
