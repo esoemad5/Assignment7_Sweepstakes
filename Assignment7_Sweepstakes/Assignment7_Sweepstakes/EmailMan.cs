@@ -12,13 +12,13 @@ namespace Assignment7_Sweepstakes
 {
     static class EmailMan
     {
-        public static void SendWinnerMessageTo(string winnersEmail)
+        public static void SendWinnerMessageTo(string winnersEmail, string sweepstakesName, string firstName, string lastName)
         {
             MailAddress sender = new MailAddress("ab6343416@gmail.com");
             MailAddress recipient = new MailAddress(winnersEmail);
             MailMessage message = new MailMessage(sender, recipient);
             message.Subject = "Congration!";
-            message.Body = "You won!!";
+            message.Body = "Congrats" + firstName + " " + lastName + ", you won the " + sweepstakesName + "sweepstakes!!!";
 
             SmtpClient client = new SmtpClient();
             client.Port = 587;

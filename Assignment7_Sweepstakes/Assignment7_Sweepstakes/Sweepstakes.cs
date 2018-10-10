@@ -71,7 +71,7 @@ namespace Assignment7_Sweepstakes
             {
                 observer.Update(winner);
             }
-            EmailMan.SendWinnerMessageTo(winner.GetInfo("emailAddress"));
+            EmailMan.SendWinnerMessageTo(winner.GetInfo("emailAddress", name, winner.GetInfo("firstName"), winner.GetInfo("lastName")));
         }
     }
 }
