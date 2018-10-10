@@ -17,7 +17,7 @@ namespace Assignment7_Sweepstakes
 
         Sweepstakes ISweepstakesManager.GetSweepstakes()
         {
-            throw new NotImplementedException();
+            return sweepstakesQueue.Pop();
         }
 
         void ISweepstakesManager.InsertSweepstakes(Sweepstakes sweepstakes)

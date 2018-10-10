@@ -16,7 +16,7 @@ namespace Assignment7_Sweepstakes
 
         public MarketingFirm()
         {
-
+            // Make a manager here??
         }
 
         private void GetSweepstakesManager(string type)
