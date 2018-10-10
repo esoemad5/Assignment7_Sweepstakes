@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Assignment7_Sweepstakes
 {
-    //  As a developer, I want to create a user interface for any information the application would need to get from the user. One example would be the functionality to assign a Contestant object a first name, last name, email address, and registration number.
     class MarketingFirm
     {
         private Dictionary<string, ISweepstakesManager> accounts;
@@ -16,7 +15,7 @@ namespace Assignment7_Sweepstakes
             accounts = new Dictionary<string, ISweepstakesManager>();
         }
 
-        private void MakeSweepstakesManager(string name)
+        public void MakeSweepstakesManager(string name)
         {
             try
             {
@@ -33,7 +32,7 @@ namespace Assignment7_Sweepstakes
 
         private string InputManagerType()
         {
-            Console.WriteLine();
+            Console.WriteLine("Please enter what kind of SweepstakesManager you would like.");
             return Console.ReadLine();
         }
     }
