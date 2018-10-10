@@ -10,6 +10,11 @@ namespace Assignment7_Sweepstakes
     {
         Stack<Sweepstakes> sweepstakes;
 
+        public SweepstakesStackManager()
+        {
+            sweepstakes = new Stack<Sweepstakes>();
+        }
+
         Sweepstakes ISweepstakesManager.GetSweepstakes()
         {
             throw new NotImplementedException();

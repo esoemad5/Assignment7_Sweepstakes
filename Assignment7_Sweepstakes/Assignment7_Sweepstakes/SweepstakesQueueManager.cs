@@ -10,6 +10,11 @@ namespace Assignment7_Sweepstakes
     {
         Queue<Sweepstakes> sweepstakes;
 
+        public SweepstakesQueueManager()
+        {
+            sweepstakes = new Queue<Sweepstakes>();
+        }
+
         Sweepstakes ISweepstakesManager.GetSweepstakes()
         {
             throw new NotImplementedException();
