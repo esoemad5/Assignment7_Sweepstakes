@@ -52,12 +52,12 @@ namespace Assignment7_Sweepstakes
             Console.WriteLine("Registration Number: {0}", contestant.RegistrationNumber );
         }
 
-        private void AddObserver(IObserver observer)
+        public void AddObserver(IObserver observer)
         {
             observers.Add(observer);
         }
 
-        private void RemoveObserver(IObserver observer)
+        public void RemoveObserver(IObserver observer)
         {
             if (!observers.Remove(observer))
             {
@@ -65,7 +65,7 @@ namespace Assignment7_Sweepstakes
             }
         }
 
-        private void NotifyObservers(Contestant winner)
+        public void NotifyObservers(Contestant winner)
         {
             foreach (IObserver observer in observers)
             {

@@ -49,17 +49,17 @@ namespace Assignment7_Sweepstakes
             Console.WriteLine("Now we will add some of the Contestants we made earlier to various Sweepstakes.");
             Console.ReadLine();
 
-            s1.AddObserver(contestants[0]);
-            s1.AddObserver(contestants[1]);
-            s1.AddObserver(contestants[2]);
+            s1.RegisterContestant(contestants[0]);
+            s1.RegisterContestant(contestants[1]);
+            s1.RegisterContestant(contestants[2]);
 
-            s2.AddObserver(contestants[3]);
-            s2.AddObserver(contestants[4]);
-            s2.AddObserver(contestants[0]);
+            s2.RegisterContestant(contestants[3]);
+            s2.RegisterContestant(contestants[4]);
+            s2.RegisterContestant(contestants[0]);
 
-            s3.AddObserver(contestants[1]);
-            s3.AddObserver(contestants[2]);
-            s3.AddObserver(contestants[3]);
+            s3.RegisterContestant(contestants[1]);
+            s3.RegisterContestant(contestants[2]);
+            s3.RegisterContestant(contestants[3]);
 
             Console.WriteLine("And finally, we give the Sweepstakes back to the manager (push onto the stack)");
             Console.ReadLine();
