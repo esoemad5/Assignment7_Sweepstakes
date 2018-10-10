@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment7_Sweepstakes
 {
-    class Contestant // : Interface goes here
+    class Contestant : IObserver
     {
         private Dictionary<string, string> info;
         private int registrationNumber;
@@ -17,7 +17,7 @@ namespace Assignment7_Sweepstakes
             info = new Dictionary<string, string>();
             SetInfo(InputInfo());
 
-            // How to set registration number? should be unique compared to all contestants (in the sweepstakes? in all the sweepstakes in their manager? in all sweepstakes globally?)
+            // how to deal with registrationNumber? where are contestants created?
         }
         private void SetInfo(Stack<string> info)
         {
@@ -54,6 +54,9 @@ namespace Assignment7_Sweepstakes
             }
         }
 
-        // Observer methods???
+        public void Update(Contestant winner)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

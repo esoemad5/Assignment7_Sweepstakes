@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment7_Sweepstakes
 {
-    class Sweepstakes
+    class Sweepstakes : ISubject
     {
         Dictionary<int, Contestant> contestants;
 
@@ -32,6 +32,21 @@ namespace Assignment7_Sweepstakes
             Console.WriteLine("{0} {1}", contestant.GetInfo("firstName"), contestant.GetInfo("lastName") );
             Console.WriteLine("e-mail: {0}", contestant.GetInfo("emailAddress") );
             Console.WriteLine("Registration Number: {0}", contestant.RegistrationNumber );
+        }
+
+        public void AddObserver(IObserver observer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveObserver(IObserver observer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void NotifyObservers()
+        {
+            throw new NotImplementedException();
         }
     }
 }
