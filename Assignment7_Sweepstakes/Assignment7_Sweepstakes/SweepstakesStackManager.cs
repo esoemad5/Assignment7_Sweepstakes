@@ -8,11 +8,11 @@ namespace Assignment7_Sweepstakes
 {
     class SweepstakesStackManager : ISweepstakesManager
     {
-        Stack<Sweepstakes> sweepstakes;
+        Stack<Sweepstakes> sweepstakesStack;
 
         public SweepstakesStackManager()
         {
-            sweepstakes = new Stack<Sweepstakes>();
+            sweepstakesStack = new Stack<Sweepstakes>();
         }
 
         Sweepstakes ISweepstakesManager.GetSweepstakes()
@@ -22,7 +22,7 @@ namespace Assignment7_Sweepstakes
 
         void ISweepstakesManager.InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new NotImplementedException();
+            sweepstakesStack.Push(sweepstakes);
         }
     }
 }
