@@ -10,6 +10,7 @@ namespace Assignment7_Sweepstakes
     {
         private Dictionary<string, string> info;
         private int registrationNumber;
+        public int RegistrationNumber { get => registrationNumber; }
         
         public Contestant()
         {

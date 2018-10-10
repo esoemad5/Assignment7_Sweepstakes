@@ -12,12 +12,12 @@ namespace Assignment7_Sweepstakes
 
         public Sweepstakes(string name)
         {
-
+            contestants = new Dictionary<int, Contestant>();
         }
 
         void RegisterContestant(Contestant contestant)
         {
-
+            contestants.Add(contestant.RegistrationNumber, contestant);
         }
 
         string PickWinner()
@@ -29,7 +29,9 @@ namespace Assignment7_Sweepstakes
 
         void PrintContestantInfo(Contestant contestant)
         {
-
+            Console.WriteLine("{0} {1}", contestant.GetInfo("firstName"), contestant.GetInfo("lastName") );
+            Console.WriteLine("e-mail: {0}", contestant.GetInfo("emailAddress") );
+            Console.WriteLine("Registration Number: {0}", contestant.RegistrationNumber );
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment7_Sweepstakes
 {
-    static class SweepstakesManagerFactory
+    static class SweepstakesManagerFactory : ICreateSweepstakesManager
     {
         public static ISweepstakesManager CreateSweepstakesManager(string type)
         {
@@ -14,8 +14,11 @@ namespace Assignment7_Sweepstakes
             {
                 case "Queue":
                     return new SweepstakesQueueManager();
-                default:
+                case "Stack":
                     return new SweepstakesStackManager();
+                default:
+                    string message = "No SweepstakesManager of type '" + type + "'";
+                    throw new FormatException(message);
             }
         }
     }
