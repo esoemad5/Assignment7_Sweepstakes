@@ -24,7 +24,6 @@ namespace Assignment7_Sweepstakes
             this.info.Add("emailAddress", info.Pop());
             this.info.Add("lastName", info.Pop());
             this.info.Add("firstName", info.Pop());
-
         }
 
         private Stack<string> InputInfo()
