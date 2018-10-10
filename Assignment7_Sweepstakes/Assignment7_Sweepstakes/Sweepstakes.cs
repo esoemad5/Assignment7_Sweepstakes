@@ -52,12 +52,12 @@ namespace Assignment7_Sweepstakes
             Console.WriteLine("Registration Number: {0}", contestant.RegistrationNumber );
         }
 
-        public void AddObserver(IObserver observer)
+        private void AddObserver(IObserver observer)
         {
             observers.Add(observer);
         }
 
-        public void RemoveObserver(IObserver observer)
+        private void RemoveObserver(IObserver observer)
         {
             if (!observers.Remove(observer))
             {
@@ -65,13 +65,13 @@ namespace Assignment7_Sweepstakes
             }
         }
 
-        public void NotifyObservers(Contestant winner)
+        private void NotifyObservers(Contestant winner)
         {
             foreach (IObserver observer in observers)
             {
                 observer.Update(winner);
             }
-            EmailMan.SendWinnerMessageTo(winner.GetInfo("emailAddress", name, winner.GetInfo("firstName"), winner.GetInfo("lastName")));
+            EmailMan.SendWinnerMessageTo(winner.GetInfo("emailAddress"), name, winner.GetInfo("firstName"), winner.GetInfo("lastName"));
         }
     }
 }

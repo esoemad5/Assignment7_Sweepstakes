@@ -53,7 +53,7 @@ namespace Assignment7_Sweepstakes
             }
         }
 
-        public void Update(Contestant winner)
+        private void Update(Contestant winner)
         {
             Console.WriteLine("{0} {1} ran Update in a Sweepstakes NotifyObservers method! Result:", GetInfo("firstName"), GetInfo("lastName"));
             if(winner == this)
