@@ -69,10 +69,10 @@ namespace Assignment7_Sweepstakes
         {
             foreach (IObserver observer in observers)
             {
-                observer.Update(winner);
-                if(observer == winner)
+                string winnersEmail = observer.Update(winner);
+                if(observer == winner && observer is Contestant)
                 {
-                    // As a developer, I want to send an actual email to a sweepstakes winner using the built in SmtpClient class in C#. Bonus points
+                    EmailMan.SendWinnerMessageTo(winnersEmail);
                 }
             }
         }

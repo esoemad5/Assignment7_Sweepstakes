@@ -53,7 +53,7 @@ namespace Assignment7_Sweepstakes
             }
         }
 
-        public void Update(Contestant winner)
+        public string Update(Contestant winner)
         {
             if(winner == this)
             {
@@ -63,6 +63,11 @@ namespace Assignment7_Sweepstakes
             {
                 Console.WriteLine("{0} has won. Try again next time!", winner.GetInfo("firstName"));
             }
+            if(!info.TryGetValue("emailAddress", out string output))
+            {
+                throw new Exception("Contestant doesn't have an email address.");
+            }
+            return output;
         }
     }
 }
