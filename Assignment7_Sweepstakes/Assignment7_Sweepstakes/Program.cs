@@ -8,37 +8,51 @@ namespace Assignment7_Sweepstakes
 {
     class Program
     {
+        private static List<Contestant> contestants;
+        private static MarketingFirm testFirm;
         static void Main(string[] args)
         {
             RunDemo();
+        }
+        private static void CreateContestants()
+        {
+            Console.WriteLine("Create 5 contestants");
+            Console.WriteLine("Enter whatever info you like, but be sure the e-mail addresses are valid to get the full effect.");
+            Console.WriteLine("Right clicking in the console is the same thing as Ctrl + V");
+            Console.WriteLine();
+            contestants = new List<Contestant>();
+            for (int i = 0; i < 5; i++)
+            {
+                contestants.Add(new Contestant());
+            }
+        }
+        private static void CreateMarketingFirm()
+        {
+        Console.WriteLine("We have created a new MarketingFirm and are in the process of making account to manage some sweepstakes in that marketing firm.");
+            Console.WriteLine("There could potentially be dozens of these accounts in this MarketingFirm, but this demonstration will only use one.");
+            Console.WriteLine("Make sure the name is exactly 'Manager' and the type is exactly 'Stack'");
+            Console.WriteLine();
+            MarketingFirm testFirm = new MarketingFirm();
+        testFirm.MakeNewAccount();
+        }
+        private static void Make3Sweepstakes()
+        {
+            Console.WriteLine("Now we can make some Sweepstakes and give them to the manager in the account we just made.");
+            Console.WriteLine("We will make 3 Sweepstakes and you can name them whatever you like.");
+            testFirm.GetAccount("Manager").InsertSweepstakes(new Sweepstakes(Sweepstakes.AskForSweepstakesName()));
+            testFirm.GetAccount("Manager").InsertSweepstakes(new Sweepstakes(Sweepstakes.AskForSweepstakesName()));
+            testFirm.GetAccount("Manager").InsertSweepstakes(new Sweepstakes(Sweepstakes.AskForSweepstakesName()));
         }
         private static void RunDemo()
         {
             Console.WriteLine("----------------------------------------------------------------");
             Console.WriteLine("Sweepstakes demo");
             Console.WriteLine("----------------------------------------------------------------");
-            Console.WriteLine("Create 5 contestants");
-            Console.WriteLine("Enter whatever info you like, but be sure the e-mail addresses are valid to get the full effect.");
-            Console.WriteLine("Right clicking in the console is the same thing as Ctrl + V");
-            Console.WriteLine();
-            List<Contestant> contestants = new List<Contestant>();
-            for (int i = 0; i < 5; i++)
-            {
-                contestants.Add(new Contestant());
-            }
+            CreateContestants();
             Console.WriteLine("----------------------------------------------------------------");
-            Console.WriteLine("We have created a new MarketingFirm and are in the process of making account to manage some sweepstakes in that marketing firm.");
-            Console.WriteLine("There could potentially be dozens of these accounts in this MarketingFirm, but this demonstration will only use one.");
-            Console.WriteLine("Make sure the name is exactly 'Manager' and the type is exactly 'Stack'");
-            Console.WriteLine();
-            MarketingFirm testFirm = new MarketingFirm();
-            testFirm.MakeNewAccount();
+            CreateMarketingFirm();
             Console.WriteLine("----------------------------------------------------------------");
-            Console.WriteLine("Now we can make some Sweepstakes and give them to the manager in the account we just made.");
-            testFirm.GetAccount("Manager").InsertSweepstakes(new Sweepstakes("For the kids!"));
-            testFirm.GetAccount("Manager").InsertSweepstakes(new Sweepstakes("Win a car!"));
-            testFirm.GetAccount("Manager").InsertSweepstakes(new Sweepstakes("Win a goat!"));
-            Console.ReadLine();
+            Make3Sweepstakes()
             Console.WriteLine("----------------------------------------------------------------");
             Console.WriteLine("3 Sweepstakes have been made. 'For the kids!', 'Win a car!', and 'Win a goat!'");
             Console.WriteLine("The Sweepstakes have been stored in a stack.");

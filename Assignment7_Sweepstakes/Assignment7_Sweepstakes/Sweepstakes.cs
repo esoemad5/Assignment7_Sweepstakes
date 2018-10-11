@@ -21,6 +21,12 @@ namespace Assignment7_Sweepstakes
             observers = new List<IObserver>();
         }
 
+        public static string AskForSweepstakesName()
+        {
+            Console.WriteLine("Please enter a name for this new Sweepstakes:");
+            return Console.ReadLine();
+        }
+
         public void RegisterContestant(Contestant contestant)
         {
             contestants.Add(contestant.RegistrationNumber, contestant);
